@@ -1,0 +1,266 @@
+<!--
+    Credits: Building an accessible glossary in vanilla JavaScript 
+    (https://blog.logrocket.com/building-accessible-glossary-vanilla-javascript/)
+     by Bryan Rasmussen
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Accessible Glossary</title>
+</head>
+
+<body>
+    <button class="openglossary" aria-label="Click to access glossary">Show Glossary</button>
+    <section class="glossarySection">
+        <h1 id="glossaryHeading" tabindex="-1">Glossary</h1>
+        <button class="close" aria-label="close the glossary">X</button>
+        <div class="glossary">
+            <ul class="glossaryLetters">
+                <li><button class='letter selectedLetter' aria-label="Current selected,  Glossary letter A">A</button>
+                </li>
+                <li><button class='letter' aria-label="Glossary letter B">B</button></li>
+                <li><button class='letter' aria-label="Glossary letter C">C</button></li>
+                <li><button class='letter' aria-label="Glossary letter D">D</button></li>
+                <li><button class='letter' aria-label="Glossary letter E">E</button></li>
+                <li><button class='letter' aria-label="Glossary letter F" aria-hidden="true" disabled>F</button></li>
+                <li><button class='letter' aria-label="Glossary letter G">G</button></li>
+                <li><button class='letter' aria-label="Glossary letter H">H</button></li>
+                <li><button class='letter' aria-label="Glossary letter I">I</button></li>
+                <li><button class='letter' aria-label="Glossary letter J" aria-hidden="true" disabled>J</button></li>
+                <li><button class='letter' aria-label="Glossary letter K" aria-hidden="true" disabled>K</button></li>
+                <li><button class='letter' aria-label="Glossary letter L">L</button></li>
+                <li><button class='letter' aria-label="Glossary letter M" aria-hidden="true" disabled>M</button></li>
+                <li><button class='letter' aria-label="Glossary letter N" aria-hidden="true" disabled>N</button></li>
+                <li><button class='letter' aria-label="Glossary letter O" aria-hidden="true" disabled>O</button></li>
+                <li><button class='letter' aria-label="Glossary letter P">P</button></li>
+                <li><button class='letter' aria-label="Glossary letter Q" aria-hidden="true" disabled>Q</button></li>
+                <li><button class='letter' aria-label="Glossary letter R" aria-hidden="true" disabled>R</button></li>
+                <li><button class='letter' aria-label="Glossary letter S">S</button></li>
+                <li><button class='letter' aria-label="Glossary letter T">T</button></li>
+                <li><button class='letter' aria-label="Glossary letter U" aria-hidden="true" disabled>U</button></li>
+                <li><button class='letter' aria-label="Glossary letter V">V</button></li>
+                <li><button class='letter' aria-label="Glossary letter W">W</button></li>
+                <li><button class='letter' aria-label="Glossary letter X" aria-hidden="true" disabled>X</button></li>
+                <li><button class='letter' aria-label="Glossary letter Y" aria-hidden="true" disabled>Y</button></li>
+                <li><button class='letter' aria-label="Glossary letter Z" aria-hidden="true" disabled>Z</button></li>
+            </ul>
+            <div class="glossaryContent">
+                <div id="letterA_content" class="letter_content currentLetter_content">
+                    <h2 class="sr-only" tabindex="-1" id="letterA_heading">Glossary terms for Letter A follow </h2>
+                    <button class="sr-only" onclick="goToNextLetter()" tabindex="-1">Go to Next Letter, B</button>
+                    <dl title="Glossary terms for Letter A">
+                        <dt>Accessibility</dt>
+                        <dd>
+                            <p>The measure of a web page's usability by persons with one or more disabilities.</p>
+                        </dd>
+                        <dt>Alternative Text</dt>
+                        <dd>
+                            <p>
+                                Short text used described images---usually 125 characters or less.</p>
+                        </dd>
+
+                        <dt>Assistive technologies</dt>
+                        <dd>
+                            <p>
+                                Technologies (software or hardware) that increase, maintain, or improve the functional
+                                capabilities of individuals with disabilities when interacting with computers or
+                                computer-based systems.</p>
+                        </dd>
+                        <dt>Audio browsers</dt>
+                        <dd>Web browsers that provides a text-to-speech capability for the blind and visually impaired.
+                        </dd>
+                    </dl>
+                </div>
+                <div id="letterB_content" class="letter_content">
+                    <h2 class="sr-only" tabindex="-1" id="letterB_heading">Glossary terms for Letter B follow </h2>
+                    <button class="sr-only" onclick="goToNextLetter()" tabindex="-1">Go to Next Letter, C</button>
+                    <dl title="Glossary terms for Letter B">
+                        <dt>Braille terminal</dt>
+                        <dd>
+                            <p>Machines that convert text on a screen to braille by raising bumps through holes on a
+                                flat surface.</p>
+                        </dd>
+                    </dl>
+                </div>
+                <div id="letterC_content" class="letter_content">
+                    <h2 class="sr-only" tabindex="-1" id="letterC_heading">Glossary terms for Letter C follow </h2>
+                    <button class="sr-only" onclick="goToNextLetter()" tabindex="-1">Go to Next Letter, D</button>
+                    <dl title="Glossary terms for Letter C">
+                        <dt>Captioning</dt>
+                        <dd>
+                            <p>The art of adding captions to a television program or movie.</p>
+                        </dd>
+                        <dt>Captions</dt>
+                        <dd>
+                            <p>A textual representation of sounds--usually associated with television programming or
+                                movies; captions are meant to display in real time and to capture speech sounds and
+                                sounds beyond speech in some cases. </p>
+                        </dd>
+                        <dt>Clickability cues</dt>
+                        <dd>
+                            <p>
+                                A visual indication that a given word or item on a Web page is clickable. Cues that can
+                                be used to indicate the clickability of an item include color, underlining, bullets, and
+                                arrows.
+                            </p>
+                        </dd>
+                    </dl>
+                </div>
+                <div id="letterD_content" class="letter_content">
+                    <h2 class="sr-only" tabindex="-1" id="letterD_heading">Glossary terms for Letter D follow </h2>
+                    <button class="sr-only" onclick="goToNextLetter()" tabindex="-1">Go to Next Letter, E</button>
+                    <dl title="Glossary terms for Letter D">
+                        <dt>Disability</dt>
+                        <dd>
+                            <p>A limitation in an ability</p>
+                        </dd>
+                    </dl>
+                </div>
+                <div id="letterE_content" class="letter_content">
+                    <h2 class="sr-only" tabindex="-1" id="letterE_heading">Glossary terms for Letter E follow </h2>
+                    <button class="sr-only" onclick="goToNextLetter()" tabindex="-1">Go to Next Letter, G</button>
+                    <dl title="Glossary terms for Letter E">
+                        <dt>Early Adopters</dt>
+                        <dd>
+                            <p>
+                                A user who has a tendency to embrace new technology before the majority.
+                            </p>
+                        </dd>
+                    </dl>
+                </div>
+                <div id="letterG_content" class="letter_content">
+                    <h2 class="sr-only" tabindex="-1" id="letterG_heading">Glossary terms for Letter G follow </h2>
+                    <button class="sr-only" onclick="goToNextLetter()" tabindex="-1">Go to Next Letter, H</button>
+                    <dl title="Glossary terms for Letter G">
+                        <dt>Graceful Degradation</dt>
+                        <dd>
+                            <p>When a site utilizes new technology, if disabled, the content maintains effectiveness for
+                                the users. </p>
+                        </dd>
+                    </dl>
+                </div>
+                <div id="letterH_content" class="letter_content">
+                    <h2 class="sr-only" tabindex="-1" id="letterH_heading">Glossary terms for Letter H follow </h2>
+                    <button class="sr-only" onclick="goToNextLetter()" tabindex="-1">Go to Next Letter, I</button>
+                    <dl title="Glossary terms for Letter H">
+                        <dt>Heat maps</dt>
+                        <dd>
+                            <p>Color-based representations of areas of interest/focus points; generally associated with
+                                eye-tracking software. </p>
+                        </dd>
+                    </dl>
+                </div>
+                <div id="letterI_content" class="letter_content">
+                    <h2 class="sr-only" tabindex="-1" id="letterI_heading">Glossary terms for Letter I follow </h2>
+                    <button class="sr-only" onclick="goToNextLetter()" tabindex="-1">Go to Next Letter, L</button>
+                    <dl title="Glossary terms for Letter I">
+                        <dt>Internationalization</dt>
+                        <dd>
+                            <p>A system whose primary design has been developed to work in multiple languages and in the
+                                cultural contexts of different locales.</p>
+                        </dd>
+                    </dl>
+                </div>
+                <div id="letterL_content" class="letter_content">
+                    <h2 class="sr-only" tabindex="-1" id="letterL_heading">Glossary terms for Letter L follow </h2>
+                    <button class="sr-only" onclick="goToNextLetter()" tabindex="-1">Go to Next Letter, P</button>
+                    <dl title="Glossary terms for Letter L">
+                        <dt>Late adopters</dt>
+                        <dd>
+                            <p>Individuals who are hestitant to adopt new technology.</p>
+                        </dd>
+                        <dt>Localization</dt>
+                        <dd>
+                            <p>Customizing or personalizing a national or international product for a local market.</p>
+                        </dd>
+                        <dt>Long Descriptions</dt>
+                        <dd>
+                            <p>Descriptions that are written for complex figures and tagged via the long desc attribute;
+                                though not currently supported by most Web browsers, the long desc attribute is a
+                                planned feature in the next iteration of Firefox.</p>
+                        </dd>
+                    </dl>
+                </div>
+                <div id="letterP_content" class="letter_content">
+                    <h2 class="sr-only" tabindex="-1" id="letterP_heading">Glossary terms for Letter P follow </h2>
+                    <button class="sr-only" onclick="goToNextLetter()" tabindex="-1">Go to Next Letter, S</button>
+                    <dl title="Glossary terms for Letter P">
+                        <dt>Programmatic Focus </dt>
+                        <dd>
+                            <p>Where the computer's focus is on a Web page. </p>
+                        </dd>
+                    </dl>
+                </div>
+                <div id="letterS_content" class="letter_content">
+                    <h2 class="sr-only" tabindex="-1" id="letterS_heading">Glossary terms for Letter S follow </h2>
+                    <button class="sr-only" onclick="goToNextLetter()" tabindex="-1">Go to Next Letter, T</button>
+                    <dl title="Glossary terms for Letter S">
+                        <dt>Screen reader</dt>
+                        <dd>
+                            <p>A software program used to allow reading of content and navigation of the screen using
+                                speech or Braille output. Used primarily by people who have difficulty seeing. JAWS and
+                                NVDA are examples.</p>
+                        </dd>
+                        <dt>Section 508 [see also 508]</dt>
+                        <dd>
+                            <p>Section 508 of the Rehabilitation Act was enacted to eliminate barriers in information
+                                technology, to make available new opportunities for people with disabilities, and to
+                                encourage development of technologies that will help achieve these goals. The law
+                                applies to all Federal agencies when they develop, procure, maintain, or use electronic
+                                and information technology. To learn more go to 508.gov.</p>
+                        </dd>
+                    </dl>
+                </div>
+                <div id="letterT_content" class="letter_content">
+                    <h2 class="sr-only" tabindex="-1" id="letterT_heading">Glossary terms for Letter T follow </h2>
+                    <button class="sr-only" onclick="goToNextLetter()" tabindex="-1">Go to Next Letter, V</button>
+                    <dl title="Glossary terms for Letter T">
+                        <dt>Transcript</dt>
+                        <dd>
+                            <p>A text only version of what's said in a movie or television program; they are not real
+                                time and they generally are limited to speech only; they are not a recommended
+                                substitute for captions.</p>
+                        </dd>
+                    </dl>
+                </div>
+                <div id="letterV_content" class="letter_content">
+                    <h2 class="sr-only" tabindex="-1" id="letterV_heading">Glossary terms for Letter V follow </h2>
+                    <button class="sr-only" onclick="goToNextLetter()" tabindex="-1">Go to Next Letter, W</button>
+                    <dl title="Glossary terms for Letter V">
+                        <dt>Visual Focus </dt>
+                        <dd>
+                            <p>Where the user's focus is on a Web page; generally represented by a dashed box that
+                                appears around items on the page and associated with tabbing.</p>
+                        </dd>
+                    </dl>
+                </div>
+                <div id="letterW_content" class="letter_content">
+                    <h2 class="sr-only" tabindex="-1" id="letterW_heading">Glossary terms for Letter W follow </h2>
+                    <button class="sr-only" onclick="goToNextLetter()" tabindex="-1">Go to First Letter, A</button>
+                    <dl title="Glossary terms for Letter W">
+                        <dt>WCAG 2.0 </dt>
+                        <dd>
+                            <p>The Web Content Accessibility Guidelines (WCAG) 2.0 is focused on providing an
+                                international technical standard for web content. It has 12 guidelines that are
+                                organized under four principles: perceivable, operable, understandable, and robust. The
+                                guidelines each have a testable success criteria, which are at three levels: A, AA, and
+                                AAA.</p>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
